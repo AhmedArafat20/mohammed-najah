@@ -498,3 +498,28 @@ textarea.input{min-height:120px; resize:vertical}
   background:rgba(217,179,95,.15);
   border-color:rgba(217,179,95,.35);
 }
+/* ===== Fix cards layout on mobile (stack) ===== */
+
+/* تابلت: خلي 3 أعمدة تبقى عمودين */
+@media (max-width: 980px){
+  .grid-3{ grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* موبايل: خلي كل الكروت تحت بعض */
+@media (max-width: 720px){
+  .grid-3,
+  .grid-2{
+    grid-template-columns: 1fr !important;
+  }
+
+  /* تحسين شكل الكارت على الموبايل */
+  .card{
+    padding:16px !important;
+  }
+
+  /* لو عندك أي عناوين طويلة */
+  .card h3{
+    margin-bottom:8px;
+    line-height:1.4;
+  }
+}
